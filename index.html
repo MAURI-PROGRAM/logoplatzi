@@ -18,17 +18,12 @@
       margin: 40px auto;
       background: #234050;
       animation-name: platzi-base;
-      animation-duration: 2s;
+      animation-duration: 3.5s;
       animation-iteration-count: infinite;
-      animation-fill-mode: forwards;
-      animation-direction: alternate;
-      animation-timing-function: ease-in-out;
-      transform-origin: top left;
-      
     }
 
     .platzi-left {
-      width: 80%;
+      width: 100%;
       height: 65%;
       border: 20px solid #97c93e;
       border-bottom: none;
@@ -37,11 +32,9 @@
       position: relative;
       top: 1px;
       animation-name: platzi-left;
-      animation-duration: 2s;
+      animation-duration: 3.5s;
+      animation-delay: 1s;
       animation-iteration-count: infinite;
-      animation-fill-mode: forwards;
-      animation-direction: alternate;
-      animation-timing-function: ease-in-out;
     }
 
     .platzi-right {
@@ -52,7 +45,7 @@
       border-radius: 0 0 20px 20px;
       box-sizing:border-box;
       animation-name: platzi-right;
-      animation-duration: 2s;
+      animation-duration: 1s;
       animation-iteration-count: infinite;
       animation-fill-mode: forwards;
       animation-direction: alternate;
@@ -61,15 +54,34 @@
 
     @keyframes platzi-base{
       from{
-        transform: rotate(30deg);
+        opacity: 0;
+        transform: scale(.3) rotate(0deg);
+      }
+      30%{
+        opacity: 1;
+        transform: scale(.8)  rotate(405deg);
+      }
+      80%{
+        opacity: 1;
+        transform: scale(.8) rotate(405deg);
       }
       to{
-        transform: rotate(70deg);
+        opacity: 0;
+        transform: scale(.3) rotate(0deg);
       }
     }
     @keyframes platzi-left{
       from{
+        width: 100%;
+      }
+      20%{
         width: 80%;
+      }
+      50%{
+        width: 80%;
+      }
+      70%{
+        width: 100%;
       }
       to{
         width: 100%;
@@ -77,10 +89,10 @@
     }
     @keyframes platzi-right{
       from{
-        width: 100%;
+      /*   width: 100%; */
       }
       to{
-        width: 80%;
+      /*   width: 80%; */
       }
     }
   </style>
